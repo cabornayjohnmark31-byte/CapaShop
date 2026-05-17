@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Summary</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <nav class="admin-navbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Shop Logo">
+      <div>
+        <p class="brand-label">Admin</p>
+        <strong>Sales Summary</strong>
+      </div>
+    </div>
+    <div class="admin-nav-links">
+      <a href="admin.html">Dashboard</a>
+      <a href="#" id="profileLink">Profile</a>
+    </div>
+  </nav>
+
+  <main class="admin-page">
+    <header class="hero">
+      <h1 id="welcome">Welcome, Admin</h1>
+      <h2>Sales Overview</h2>
+    </header>
+
+    <section class="sales-dashboard" id="salesDashboard">
+      <div class="summary-card">
+        <h3>Total Sold</h3>
+        <p id="totalSold">0</p>
+      </div>
+      <div class="summary-card">
+        <h3>Total Sales</h3>
+        <p id="totalSales">PHP 0.00</p>
+      </div>
+      <div class="graph-card">
+        <div class="graph-header">
+          <div>
+            <h3>Sales Bar Graph</h3>
+            <p>Products sold by quantity</p>
+          </div>
+        </div>
+        <div class="sales-chart" id="salesChart"></div>
+      </div>
+    </section>
+
+    <section class="panel-section">
+      <h3>Product Sales List</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Item Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Sold</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="salesItemList"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div id="profilePanel" class="profile-panel">
+    <div class="profile-header">
+      <img id="profilePic" src="https://via.placeholder.com/120?text=Profile" alt="Profile Pic">
+      <h3 id="profileName">Admin</h3>
+      <input type="file" class="profilefile" id="profileUpload" accept="image/*">
+      <label for="profileUpload" class="custom-file-btn">Choose Image</label>
+      <span id="fileName">No file selected</span>
+      <button id="saveProfilePic">Save</button>
+    </div>
+    <div class="profile-links">
+      <a href="admin.html">Go to Dashboard</a>
+    </div>
+    <div class="profile-button">
+      <button id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/sales.js"></script>
+</body>
+</html>

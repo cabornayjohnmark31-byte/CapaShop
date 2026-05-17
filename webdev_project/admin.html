@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <nav class="admin-navbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Shop Logo">
+      <div>
+        <p class="brand-label">Admin</p>
+        <strong>Shop Dashboard</strong>
+      </div>
+    </div>
+    <div class="admin-nav-links">
+      <a href="#usersSection">Users</a>
+      <a href="#itemsSection">Items</a>
+      <a href="#" id="profileLink">Profile</a>
+    </div>
+  </nav>
+
+  <main class="admin-page">
+    <header class="hero">
+      <h1 id="welcome">Welcome, Admin</h1>
+      <h2>Administrator Panel</h2>
+            <a class="sales-link" href="sales.html">Go toSales</a>
+
+    </header>
+
+    <section class="add-item-section">
+      <h3>Add New Item</h3>
+      <form id="addItemForm">
+        <input type="text" id="itemName" placeholder="Item Name" required>
+        <input type="number" id="itemPrice" placeholder="Price" required>
+        <select id="itemCategory" required>
+          <option value="" disabled selected>Select Category</option>
+          <option value="T-Shirt">T-Shirt</option>
+          <option value="Shorts">Shorts</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Others">Others</option>
+        </select>
+        <input type="file" id="itemImage" accept="image/*" required>
+        <button class="add-itembtn" type="submit">Add Item</button>
+      </form>
+    </section>
+
+    <section class="panel-section" id="usersSection">
+      <h3>Users List</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="userList"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel-section" id="itemsSection">
+      <h3>Items List</h3>
+      <div class="table-container">
+        <table class="items-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Item Name</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Sold</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="itemList"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div id="profilePanel" class="profile-panel">
+    <div class="profile-header">
+      <img id="profilePic" src="https://via.placeholder.com/120?text=Profile" alt="Profile Pic">
+      <h3 id="profileName">Admin</h3>
+      <input type="file" class="profilefile" id="profileUpload" accept="image/*">
+      <label for="profileUpload" class="custom-file-btn">Choose Image</label>
+      <span id="fileName">No file selected</span>
+      <button id="saveProfilePic">Save</button>
+    </div>
+    <div class="profile-links">
+      <a href="sales.html">Go to Sales</a>
+    </div>
+    <div class="profile-button">
+      <button id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <div id="logoutModal" class="logout-modal" aria-hidden="true">
+    <div class="logout-modal-content">
+      <h3>Log out of your account?</h3>
+      <p>Your admin session will end and you will return to the login page.</p>
+      <div class="logout-modal-actions">
+        <button type="button" class="logout-cancel" id="cancelLogout">Cancel</button>
+        <button type="button" class="logout-confirm" id="confirmLogout">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+  <div class="signup-box">
+    <div class="logo"><img src="assets/logo.png" alt="Logo"></div>
+    <div class="signup-header">
+      <header>Sign Up</header>
+    </div>
+    <div class="signup-p">
+      <p>Create an account:</p>
+    </div>
+    <form id="signupForm">
+      <div class="input-box">
+        <input type="text" id="username" class="input-field" autocomplete="off" required>
+        <label for="username" class="floating-label">Username</label>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" class="input-field" autocomplete="off" required>
+        <label for="password" class="floating-label">Password</label>
+        <input type="checkbox" class="box" onclick="password.type=this.checked?'text':'password'">
+      </div>
+      <div class="input-box">
+        <input type="password" id="repassword" class="input-field" autocomplete="off" required>
+        <label for="repassword" class="floating-label">Re-enter Password</label>
+        <input type="checkbox" class="box" onclick="repassword.type=this.checked?'text':'password'">
+      </div>
+      <div class="input-submit">
+        <button type="submit" class="submit-btn" id="submit">Sign Up</button>
+      </div>
+    </form>
+    <div class="btlogin">
+      <a href="index.html">Back to Login</a>
+    </div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>
